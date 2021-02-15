@@ -4,10 +4,12 @@ class Vehicle {
         this.numOfWheels = numOfWheels;
         this.type = type;
     }
+
     showVehicleInfo() {
         return console.log(`Vehicle Type: ${this.type}\nManufacturer: ${this.manufacturer}\nNumber of Wheels: ${this.numOfWheels}`);
     };
 };
+
 
 
 class Truck extends Vehicle {
@@ -16,9 +18,16 @@ class Truck extends Vehicle {
         this.numOfDoors = numOfDoors;
         this.hasTruckBed = hasTruckBed;
     }
+    
     showTruckVehicleInfo() {
         return console.log(`No. of Doors: ${this.numOfDoors}\nHas Truck Bed: ${this.hasTruckBed}`);
     };
+    
+    // Method Overriding
+    showVehicleInfo() {
+        console.log(`This vehicle has ${this.numOfDoors} number of doors and has a truck bed - ${this.hasTruckBed}.`);
+        // can I put an if stmt here to check for "true" and change to "has/doesn't have"??
+    }
 };
 
 
@@ -28,6 +37,7 @@ class Sedan extends Vehicle {
         this.size = size;
         this.mpg = mpg;
     }
+
     showSedanVehicleInfo() {
         return console.log(`Vehicle Size: ${this.size}\nMiles per Gallon: ${this.mpg} mpg`);
     };
@@ -39,10 +49,14 @@ class Motorcycle extends Vehicle {
         super(numOfDoors);
         this.handleBarsSteeringWheel = handleBarsSteeringWheel;
     }
+
     showMotorcycleVehicleInfo() {
         return console.log(`Handlebars / Steering Wheel: ${this.handleBarsSteeringWheel}\n`)
     };
 };
+
+
+
 
 
 let vehicleOne = new Vehicle("Ford", 4, "car");
@@ -50,7 +64,8 @@ let vehicleOneTruck = new Truck(4, 4.5, false);
 let vehicleOneSedan = new Sedan(false, "medium", 27);
 let vehicleOneMotorcyle = new Motorcycle("steering wheel", 4);
 vehicleOne.showVehicleInfo();
-vehicleOneTruck.showTruckVehicleInfo();
+vehicleOneTruck.showVehicleInfo();
+// vehicleOneTruck.showTruckVehicleInfo();
 vehicleOneSedan.showSedanVehicleInfo();
 vehicleOneMotorcyle.showMotorcycleVehicleInfo();
 
