@@ -55,3 +55,24 @@ function Person(name, city, age) {
     this.city = city;
     this.age = age; 
 }
+
+// Write a method that will print a string similar to this “Hey! My name is ___ I am __ years old and live in __”.
+
+Person.prototype.sayHello = function() {
+    console.log(`Hey! My name is ${this.name} I am ${this.age} years old and live in ${this.city}.`);
+}
+
+// Create 5 instances of the same friends from step 1, except this time use the pseudo class and method we just created.
+
+let p1 = new Person("Jon", "Bessemer", 38);
+let p2 = new Person("JC Reynolds", "Argo", 36);
+let p3 = new Person("BK Scott", "Atlanta", 28);
+let p4 = new Person("MIT Austin", "SoHo", 40);
+let p5 = new Person("ZBA Jones", "McCalla", 10);
+
+
+p1.sayHello();
+p2.sayHello();
+p3.sayHello();
+p4.sayHello();
+p5.sayHello();
