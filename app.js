@@ -76,3 +76,30 @@ p2.sayHello();
 p3.sayHello();
 p4.sayHello();
 p5.sayHello();
+
+
+// Using the ES6 syntax makes object oriented programming in javascript much easier to understand. Let’s use the ES6 syntax and create the same class that we just did. (Hint: ES6 classes are not made using a constructor function, they use a keyword: class. They have a constructor which is used to take in the parameters name, city, and age. And methods will not need to be prototypes!).
+
+class familyPerson {
+    constructor(name, city, age) {
+        this.name = name;
+        this.city = city;
+        this.age = age;
+    }
+
+    sayHello() {
+        console.log(`Hey! My name is ${this.name} I am ${this.age} years old and live in ${this.city}.`)
+    }
+}
+
+let firstPerson = new familyPerson("Jon", "Cleverville", 11);
+let secondPerson = new familyPerson("James", "Country Road 66", 66);
+let thirdPerson = new familyPerson("Jordan", "Courtyard by the Nile", 112);
+let fourthPerson = new familyPerson("Jared", "Club Subway", 32);
+let fifthPerson = new familyPerson("Jamal", "Clayton Count", 21);
+
+firstPerson.sayHello();
+secondPerson.sayHello();
+thirdPerson.sayHello();
+fourthPerson.sayHello();
+fifthPerson.sayHello();
